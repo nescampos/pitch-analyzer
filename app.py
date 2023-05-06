@@ -37,12 +37,12 @@ html_temp = """
 with st.sidebar:
     st.markdown("""
     # About 
-    Pitch Analyzer is a helper tool built on [LangChain](https://langchain.com) to review the pitch of projects/startups to filter them, saving time for your analysts and investors.
+    Pitch Analyzer is a helper tool built on [LangChain](https://langchain.com) to review the pitch of projects/startups to train founders and prepare for the questions they receive from investors and stakeholders.
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
     # How does it work
-    Simply upload the Powerpoint file and wait some seconds to receive the information.
+    Simply upload the text of your pitch. [Here you have samples](https://github.com/nescampos/pitch-analyzer/tree/main/samples)
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
