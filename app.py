@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 from streamlit.components.v1 import html
-from langchain.document_loaders import PyPDFLoader
+from langchain.document_loaders import UnstructuredPDFLoader
 
 openai.api_key = st.secrets["openaiKey"]
 
@@ -43,7 +43,7 @@ if uploaded_file is not None:
   with open(uploaded_file.name, 'wb') as f: 
     f.write(bytes_data)
     
-  loader = PyPDFLoader(uploaded_file.name)
-  pitch_data = loader.load_and_split()
+  loader = UnstructuredPDFLoader(uploaded_file.name)
+  pitch_data = loader.load()
   st.write(pitch_data[0])
 
