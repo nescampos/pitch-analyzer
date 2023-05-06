@@ -3,4 +3,4 @@ streamlit
 pandas
 langchain
 unstructured
-libreoffice
+pypdf
