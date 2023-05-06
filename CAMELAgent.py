@@ -38,4 +38,4 @@ class CAMELAgent:
         output_message = self.model(messages)
         self.update_messages(output_message)
 
-        return 
+        return output_message
