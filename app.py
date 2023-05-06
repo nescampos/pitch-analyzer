@@ -55,6 +55,14 @@ st.markdown("""
     # Pitch Analyzer
     """)
 
+st.markdown("""
+### Enter all your pitch text and you will see the possible questions you would receive from investors and stakeholders, while an agent will try to answer from your pitch text, and if there is no information, infer an answer or not answer, so you can prepare for future events to present your startup.
+""")
+
+st.markdown("""
+#### Due to resource issues, this initial version (alpha) generates each text every 21 seconds.
+""")
+
 
 startup_pitch = st.text_area("Upload your startup pitch in text format", placeholder="Write all your pitch")
 
