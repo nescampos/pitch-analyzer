@@ -88,8 +88,6 @@ if startup_pitch:
   Always end <YOUR_SOLUTION> with: Next request.
   The information of your startup to answer the questions is """+str(startup_pitch)
   )
-  
-  assistant_inception_prompt = "<START>"+str(pitch_data[0])+"<END>"
 
   user_inception_prompt = (
   """Never forget you are a {user_role_name} and I am a {assistant_role_name}. Never flip roles! You will always ask me questions.
