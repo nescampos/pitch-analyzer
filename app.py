@@ -17,6 +17,7 @@ from langchain.schema import (
 )
 import time
 from CAMELAgent import CAMELAgent
+from PIL import Image
 
 os.environ["OPENAI_API_KEY"] = st.secrets["openaiKey"]
 
@@ -25,8 +26,9 @@ user_role_name = "Venture Capital Investor"
 task = "Decide if the startup presented by the founder meets the expectations to be able to receive investment from the Venture Capital fund."
 word_limit = 50
 
-
+image = Image.open('logo.jpg')
 st.set_page_config(page_title="Pitch Analyzer")
+st.image(image, caption='')
 
 html_temp = """
                 <div style="background-color:{};padding:1px">
@@ -43,6 +45,7 @@ with st.sidebar:
     st.markdown("""
     # How does it work
     Simply upload the text of your pitch. [Here you have samples](https://github.com/nescampos/pitch-analyzer/tree/main/samples)
+    *Due to resource issues, this initial version (alpha) generates each text every 21 seconds.*
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
@@ -56,11 +59,7 @@ st.markdown("""
     """)
 
 st.markdown("""
-### Enter all your pitch text and you will see the possible questions you would receive from investors and stakeholders, while an agent will try to answer from your pitch text, and if there is no information, infer an answer or not answer, so you can prepare for future events to present your startup.
-""")
-
-st.markdown("""
-#### Due to resource issues, this initial version (alpha) generates each text every 21 seconds.
+#### Enter all your pitch text and you will see the possible questions you would receive from investors and stakeholders, while an agent will try to answer from your pitch text, and if there is no information, infer an answer or not answer, so you can prepare for future events to present your startup.
 """)
 
 
