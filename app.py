@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 from streamlit.components.v1 import html
-from langchain.document_loaders import UnstructuredPowerPointLoader
+from langchain.document_loaders import UnstructuredPDFLoader
 
 openai.api_key = st.secrets["openaiKey"]
 
@@ -35,10 +35,10 @@ st.markdown("""
     """)
 
 
-uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=["ppt","pptx"], accept_multiple_files=False)
+uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=["pdf"], accept_multiple_files=False)
 
 if uploaded_file is not None:
-  loader = UnstructuredPowerPointLoader(uploaded_file.name)
+  loader = UnstructuredPDFLoader(uploaded_file.name)
   pitch_data = loader.load()
   st.write("data:", uploaded_file.name)
   
