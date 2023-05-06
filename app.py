@@ -16,7 +16,7 @@ from langchain.schema import (
 )
 from CAMELAgent import CAMELAgent
 
-openai.api_key = st.secrets["openaiKey"]
+os.environ["OPENAI_API_KEY"] = st.secrets["openaiKey"]
 
 assistant_role_name = "Startup Founder"
 user_role_name = "Venture Capital Investor"
