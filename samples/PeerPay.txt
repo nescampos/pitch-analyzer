@@ -1,0 +1,15 @@
+Startup: PeerPay
+Vision: Digital Payment for the next one billion people, made simple.
+Problem: is Millions of people without access to the digital economy
+1.7 billion People do not have access to the financial system.
+US$10 trillion In sales in the informal economy globally.
+US$120 billion In remittance costs is spent each year to facilitate international transactions. 
+Solution: PeerPay is an interoperable Web payment system with the advantages of Web 3.0 and the ease of use of Web 2.0.
+The idea is Send and receive money in any network at a lower cost without technical knowledge or understanding blockchain networks.
+Why PeerPay?: As an inclusive payment system, people will have the freedom to manage their money. (fiat, crypto, and CBDC)
+Business model: Transaction fees Between 0.01% to 1%, depending on the size of the transaction, and asset.
+Differentiation: Non-custodial money. Web3 without technical knowledge. Integration of all kinds of money (fiat, crypto and CBDC).
+Team: Néstor Campos - Founder/Technical Manager - +13 years working in many technologies products/companies.
+Status and evolution: We are in a MVP stage, and I won the Ripple Global CBDC hackathon in 2022. Also, we received fund for US$100,000 for the MVP.
+We are fundraising US$300,000 for Improve back-end architecture and enable different Blockchain protocols and banks
+The terms of our round are 8% and valuation: US$3,750,000.
