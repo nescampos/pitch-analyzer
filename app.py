@@ -45,5 +45,5 @@ if uploaded_file is not None:
     
   loader = PyPDFLoader(uploaded_file.name)
   pitch_data = loader.load_and_split()
-  
+  st.write(pitch_data[0])
 
