@@ -4,4 +4,4 @@ pandas
 langchain
 unstructured
 pypdf
-detectron2 "detectron2@git+https://github.com/facebookresearch/detectron2.git@e2ce8dc#egg=detectron2"
+detectron2 @ git+https://github.com/facebookresearch/detectron2.git@e2ce8dc#egg=detectron2
