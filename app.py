@@ -21,7 +21,7 @@ os.environ["OPENAI_API_KEY"] = st.secrets["openaiKey"]
 
 assistant_role_name = "Startup Founder"
 user_role_name = "Venture Capital Investor"
-task = "Ask questions and analyze if the presented startup is viable to be invested in"
+task = "Ask questions about the founder's startup and assess whether it is viable to invest in it."
 word_limit = 50
 
 
