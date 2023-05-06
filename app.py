@@ -15,6 +15,7 @@ from langchain.schema import (
     SystemMessage,
     BaseMessage,
 )
+import time
 from CAMELAgent import CAMELAgent
 
 os.environ["OPENAI_API_KEY"] = st.secrets["openaiKey"]
@@ -92,10 +93,12 @@ if uploaded_file is not None:
   Answer: <YOUR_SOLUTION>
 
   <YOUR_SOLUTION> should be specific and provide preferable answer to the question.
-  Always end <YOUR_SOLUTION> with: Next request."""
+  Always end <YOUR_SOLUTION> with: Next request.
+  The information of your startup to answer the questions is contained in this text within the <START> and <END> tags: """
+      
   )
   
-  # assistant_inception_prompt = assistant_inception_prompt + ". The pitch of your startup so that you can respond is: "+str(pitch_data[0])
+  assistant_inception_prompt = "<START>"+str(pitch_data[0])+"<END>"
 
   user_inception_prompt = (
   """Never forget you are a {user_role_name} and I am a {assistant_role_name}. Never flip roles! You will always ask me questions.
