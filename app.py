@@ -21,7 +21,7 @@ os.environ["OPENAI_API_KEY"] = st.secrets["openaiKey"]
 
 assistant_role_name = "Startup Founder"
 user_role_name = "Venture Capital Investor"
-task = "Decide if the founder's startup is viable to invest in."
+task = "Decide if the startup presented by the founder meets the expectations to be able to receive investment from the Venture Capital fund."
 word_limit = 50
 
 
@@ -95,7 +95,7 @@ if uploaded_file is not None:
   Always end <YOUR_SOLUTION> with: Next request."""
   )
   
-  # assistant_inception_prompt = assistant_inception_prompt + ". The pitch of your startup so that you can respond is: "+str(pitch_data[0])
+  assistant_inception_prompt = assistant_inception_prompt + ". The pitch of your startup so that you can respond is: "+str(pitch_data[0])
 
   user_inception_prompt = (
   """Never forget you are a {user_role_name} and I am a {assistant_role_name}. Never flip roles! You will always ask me questions.
