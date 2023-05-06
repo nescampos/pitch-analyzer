@@ -94,7 +94,7 @@ if uploaded_file is not None:
   Always end <YOUR_SOLUTION> with: Next request."""
   )
   
-  assistant_inception_prompt = assistant_inception_prompt + ". The pitch of your startup so that you can respond is: "+pitch_data[0]
+  assistant_inception_prompt = assistant_inception_prompt + ". The pitch of your startup so that you can respond is: "+str(pitch_data[0])
 
   user_inception_prompt = (
   """Never forget you are a {user_role_name} and I am a {assistant_role_name}. Never flip roles! You will always ask me questions.
