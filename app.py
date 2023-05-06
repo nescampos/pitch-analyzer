@@ -38,9 +38,9 @@ st.markdown("""
 uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=["pdf"], accept_multiple_files=False)
 
 if uploaded_file is not None:
-  st.write("data:", uploaded_file.path)
-  loader = PyPDFLoader(uploaded_file.name)
-  pitch_data = loader.load_and_split()
+  bytes_data = uploaded_file.read()
+  st.write("filename:", uploaded_file.name)
+  st.write(bytes_data)
   
   
 
