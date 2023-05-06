@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 from streamlit.components.v1 import html
-from langchain.document_loaders import UnstructuredPDFLoader
+from langchain.document_loaders import PyPDFLoader
 
 openai.api_key = st.secrets["openaiKey"]
 
@@ -39,8 +39,8 @@ uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=[
 
 if uploaded_file is not None:
   st.write("data:", uploaded_file.name)
-  loader = UnstructuredPDFLoader("./"+uploaded_file.name)
-  pitch_data = loader.load()
+  loader = PyPDFLoader(uploaded_file.name)
+  pitch_data = loader.load_and_split()
   
   
 
