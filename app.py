@@ -38,7 +38,7 @@ st.markdown("""
 uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=["ppt","pptx"], accept_multiple_files=False)
 
 if uploaded_file is not None:
-  #loader = UnstructuredPowerPointLoader(uploaded_file.name)
+  loader = UnstructuredPowerPointLoader(uploaded_file.name)
   #pitch_data = loader.load()
   st.write("data:", uploaded_file.name)
   
