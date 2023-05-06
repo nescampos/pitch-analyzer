@@ -40,7 +40,10 @@ uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=[
 if uploaded_file is not None:
   bytes_data = uploaded_file.read()
   st.write("filename:", uploaded_file.name)
-  st.write(bytes_data)
-  
+  with open(uploaded_file.name, 'wb') as f: 
+    f.write(bytes_data)
+    
+  loader = PyPDFLoader(uploaded_file.name)
+  pitch_data = loader.load_and_split()
   
 
