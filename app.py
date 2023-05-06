@@ -56,7 +56,7 @@ st.markdown("""
     """)
 
 
-uploaded_file = st.file_uploader("Upload the pitch in Powerpoint format", type=["pdf"], accept_multiple_files=False)
+startup_pitch = st.text_area("Upload your startup pitch in text format", placeholder="Write all your pitch")
 
 def get_sys_msgs(assistant_role_name: str, user_role_name: str, task: str):
   assistant_sys_template = SystemMessagePromptTemplate.from_template(template=assistant_inception_prompt)
@@ -65,15 +65,7 @@ def get_sys_msgs(assistant_role_name: str, user_role_name: str, task: str):
   user_sys_msg = user_sys_template.format_messages(assistant_role_name=assistant_role_name, user_role_name=user_role_name, task=task)[0]
   return assistant_sys_msg, user_sys_msg
 
-if uploaded_file is not None:
-  bytes_data = uploaded_file.read()
-  st.write("filename:", uploaded_file.name)
-  with open(uploaded_file.name, 'wb') as f: 
-    f.write(bytes_data)
-    
-  loader = UnstructuredPDFLoader(uploaded_file.name)
-  pitch_data = loader.load()
-  st.write(pitch_data[0])
+if startup_pitch:
   assistant_inception_prompt = (
   """Never forget you are a {assistant_role_name} and I am a {user_role_name}. Never flip roles! Never instruct me!
   We share a common interest in collaborating to successfully complete a task.
@@ -94,8 +86,7 @@ if uploaded_file is not None:
 
   <YOUR_SOLUTION> should be specific and provide preferable answer to the question.
   Always end <YOUR_SOLUTION> with: Next request.
-  The information of your startup to answer the questions is contained in this text within the <START> and <END> tags: """
-      
+  The information of your startup to answer the questions is """+str(startup_pitch)
   )
   
   assistant_inception_prompt = "<START>"+str(pitch_data[0])+"<END>"
@@ -120,7 +111,8 @@ if uploaded_file is not None:
   Do not add anything else other than your question. 
   Keep giving me questionyou think the task is completed.
   When the task is completed, you must only reply with a single word <CAMEL_TASK_DONE>.
-  Never say <CAMEL_TASK_DONE> unless my responses have solved your task."""
+  Never say <CAMEL_TASK_DONE> unless my responses have solved your task.
+  The information of the startup to make the questions is """+str(startup_pitch)
   )
   task_specifier_sys_msg = SystemMessage(content="You can make a task more specific.")
   task_specifier_prompt = (
