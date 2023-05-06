@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+import os
 from streamlit.components.v1 import html
 from langchain.document_loaders import UnstructuredPDFLoader
 from typing import List
