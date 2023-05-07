@@ -39,7 +39,7 @@ html_temp = """
 with st.sidebar:
     st.markdown("""
     # About 
-    Pitch Analyzer is a helper tool built on [LangChain](https://langchain.com) to review the pitch of projects/startups to train founders and prepare for the questions they receive from investors and stakeholders.
+    Pitch Analyzer is a helper tool built on [LangChain](https://langchain.com) and [CAMEL](https://github.com/lightaime/camel) to review the pitch of projects/startups to train founders and prepare for the questions they receive from investors and stakeholders.
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
