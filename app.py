@@ -131,7 +131,7 @@ if startup_pitch:
                                                                user_role_name=user_role_name,
                                                                task=task, word_limit=word_limit)[0]
   specified_task_msg = task_specify_agent.step(task_specifier_msg)
-  st.text(f"Specified task: {specified_task_msg.content}")
+  # st.text(f"Specified task: {specified_task_msg.content}")
   specified_task = specified_task_msg.content
   
   assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
